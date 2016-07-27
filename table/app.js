@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngAnimate','ngTouch', 'ui.grid']);
+var app = angular.module('app', ['ngAnimate','ngTouch', 'ui.grid','ui.grid.resizeColumns', 'ui.grid.moveColumns', 'ui.grid.exporter']);
 
 
 
@@ -78,10 +78,18 @@ app.controller('MainCtrl', ['$scope','$http','uiGridConstants', function ($scope
     
     $scope.gridOptions = { //Handles the filtering
         enableFiltering: true,
+        enableColumnResizing: true,
+        exporterCsvFilename: 'data.csv',
+        enableGridMenu: true,
+        exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
         columnDefs:filteringRules};   
     
     $scope.gridOptions2 = { //Handles the filtering
         enableFiltering: true,
+        enableColumnResizing: true,
+        exporterCsvFilename: 'data.csv',
+        enableGridMenu: true,
+        exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
         columnDefs:filteringRules};  
     
     $http.get('./resources/turbine2.json') //get data from json, to be replaced with db call
@@ -91,6 +99,10 @@ app.controller('MainCtrl', ['$scope','$http','uiGridConstants', function ($scope
     
     $scope.gridOptions3 = { //Handles the filtering
         enableFiltering: true,
+        enableColumnResizing: true,
+        exporterCsvFilename: 'data.csv',
+        enableGridMenu: true,
+        exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
         columnDefs:filteringRules};   
     
     $http.get('./resources/turbine3.json') //get data from json, to be replaced with db call
@@ -100,6 +112,10 @@ app.controller('MainCtrl', ['$scope','$http','uiGridConstants', function ($scope
     
     $scope.gridOptions4 = { //Handles the filtering
         enableFiltering: true,
+        enableColumnResizing: true,
+        exporterCsvFilename: 'data.csv',
+        enableGridMenu: true,
+        exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
         columnDefs:filteringRules};   
     
     $http.get('./resources/turbine4.json') //get data from json, to be replaced with db call
